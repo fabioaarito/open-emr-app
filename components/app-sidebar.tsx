@@ -32,7 +32,7 @@ const items = [
     },
     {
         title: "Medications",
-        url: "#",
+        url: "medications",
         icon: SyringeIcon,
     },
     {
