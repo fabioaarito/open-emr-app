@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 
 const SUBJECT_ID = 30163;
@@ -28,8 +28,8 @@ export default function Home() {
 
       setPatientMedications(json.entry)
 
-    } catch (error: any) {
-      console.error(error.message);
+    } catch (error) {
+      console.error(error);
     }
 
     }
@@ -43,6 +43,8 @@ export default function Home() {
       console.log(entry);
       return (
         <div key={index}>
+          {/* 
+            // @ts-expect-error just for testing purposes */}
           {entry.resource.medicationCodeableConcept?.text}
         </div>
       )
@@ -57,6 +59,8 @@ export default function Home() {
           </h3>
           <div>
             <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
+              {/* 
+                // @ts-expect-error just for testing purposes */}
               {patientMedications.length > 0 && patientMedications[patientMedications.length-1].resource.name[0].given[0]}
             </h3>
             { patientMedications.length > 0 && renderMedicationsList()}
