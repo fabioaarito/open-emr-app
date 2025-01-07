@@ -40,6 +40,7 @@ export default function Home() {
 
   const renderMedicationsList = () => {
     return patientMedications.map((entry, index: number) => {
+      console.log(entry);
       return (
         <div key={index}>
           {entry.resource.medicationCodeableConcept?.text}
@@ -55,7 +56,10 @@ export default function Home() {
               Medications
           </h3>
           <div>
-            { patientMedications && renderMedicationsList()}
+            <h3 className="scroll-m-20 text-xl font-semibold tracking-tight">
+              {patientMedications.length > 0 && patientMedications[patientMedications.length-1].resource.name[0].given[0]}
+            </h3>
+            { patientMedications.length > 0 && renderMedicationsList()}
           </div>
       </main>
     </div>
