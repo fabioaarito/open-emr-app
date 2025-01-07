@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 
 const SUBJECT_ID = 30163;
-const URL =  "http://hapi.fhir.org/baseR4/MedicationStatement?_include=*&subject=";
+const URL =  "https://hapi.fhir.org/baseR4/MedicationStatement?_include=*&subject=";
 
 export default function Home() {
   const [patientMedications, setPatientMedications] = useState([]);
