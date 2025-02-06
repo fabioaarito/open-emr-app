@@ -18,6 +18,8 @@ import {
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+
 // Menu items.
 const items = [
     {
@@ -69,16 +71,26 @@ export function AppSidebar() {
                 <SidebarGroup>
                     <SidebarGroupContent>
                         <SidebarMenu>
-                            {items.map((item) => (
-                                <SidebarMenuItem key={item.title}>
-                                    <SidebarMenuButton asChild>
-                                        <a href={item.url}>
-                                            <item.icon />
-                                            <span>{item.title}</span>
-                                        </a>
+                            <SidebarMenuItem key={0} className="h-20">
+                                <SidebarMenuButton asChild className="h-20">
+                                    <a href={"/"}>
+                                        <Avatar className="mt-2">
+                                            <AvatarImage src="https://phire.techascent.com/img/doctor.png" />
+                                        </Avatar>
+                                        My Patients
+                                    </a>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
-                            ))}
+                                {items.map((item) => (
+                                    <SidebarMenuItem key={item.title}>
+                                        <SidebarMenuButton asChild>
+                                            <a href={item.url}>
+                                                <item.icon />
+                                                <span>{item.title}</span>
+                                            </a>
+                                        </SidebarMenuButton>
+                                    </SidebarMenuItem>
+                                ))}
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
