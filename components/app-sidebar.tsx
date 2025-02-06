@@ -67,7 +67,7 @@ const items = [
 export function AppSidebar() {
     return (
         <Sidebar variant={'sidebar'} collapsible={'icon'}>
-            <SidebarContent>
+            <SidebarContent className="bg-white">
                 <SidebarGroup>
                     <SidebarGroupContent>
                         <SidebarMenu>
