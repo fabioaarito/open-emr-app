@@ -1,6 +1,6 @@
 "use client"
 import { useSearchParams } from "next/navigation";
-import React from "react";
+import React, { Suspense } from "react";
 import { patients } from "../utils/dummydb";
 import ProfileCard from "./components/profile";
 import Problems from "./components/problems";
@@ -12,6 +12,15 @@ import Diagnostics from "./components/diagnostics";
 import Reports from "./components/reports";
 
 export default function Patient() {
+  return (
+    // You could have a loading skeleton as the `fallback` too
+    <Suspense>
+      <PatientComponent />
+    </Suspense>
+  )
+}
+
+ function PatientComponent() {
 
   const searchParams = useSearchParams();
  

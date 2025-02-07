@@ -1,5 +1,4 @@
 "use client"
-import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 import { AudioLines, HeartPulse, Thermometer } from "lucide-react";
 import React from "react";
 
