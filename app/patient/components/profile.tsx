@@ -2,7 +2,7 @@
 import { AudioLines, HeartPulse, Thermometer } from "lucide-react";
 import React from "react";
 
-export default function ProfileCard() {
+export default function ProfileCard({patient} : any) {
 
   React.useEffect(() => {
 
@@ -18,7 +18,7 @@ export default function ProfileCard() {
                  <img alt="Portrait of a woman with blonde hair, wearing a white shirt, smiling and standing with arms crossed" className="w-16 h-16 rounded-full mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/MtTX23Fn-oFtpKDJCmllqbUYCRPR4LhWjxglViEo6Cw.jpg" width="100"/>
                 <div>
                 <h2 className="text-xl font-bold">
-                    DOE, Jane
+                    {patient.name}
                 </h2>
                 <p className="text-gray-600">
                     34 y.o. F (1/1/1990)
