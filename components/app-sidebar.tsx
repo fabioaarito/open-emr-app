@@ -18,7 +18,7 @@ import {
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarImage } from "@/components/ui/avatar"
 
 // Menu items.
 const items = [

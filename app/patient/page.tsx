@@ -1,6 +1,6 @@
 "use client"
 import { useSearchParams } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 import { patients } from "../utils/dummydb";
 import ProfileCard from "./components/profile";
 import Problems from "./components/problems";
@@ -16,7 +16,7 @@ export default function Patient() {
   const searchParams = useSearchParams();
  
   const id = Number(searchParams.get('id'))
-  const patient = patients.filter((patient : any) => patient.id === id)[0];
+  const patient = patients.filter((patient) => patient.id === id)[0];
   console.log(patient)
 
   React.useEffect(() => {

@@ -1,10 +1,7 @@
 "use client"
-import { useSearchParams } from "next/navigation";
-import React, { useState } from "react";
+import React from "react";
 
 export default function Laboratory() {
-
-  const searchParams = useSearchParams();
 
   React.useEffect(() => {
 
