@@ -33,17 +33,25 @@ export default function Patient() {
   }, []);
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px]  min-h-screen p-4 pb-20 gap-16 sm:p-8 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 sm:items-start">
-        <div className="grid grid-cols-2 gap-2">
-          <ProfileCard patient={patient}/>
-          <Problems />
-          <Recommendations />
-          <Orders />
-          <Laboratory />
-          <Predictions />
-          <Diagnostics />
-          <Reports />
+    <div className="grid sm:p-8 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col gap-2 sm:items-start">
+        <div className="grid grid-cols-3 gap-3">
+          <div className="col-span-2">
+            <ProfileCard patient={patient}/>
+            <div className="grid grid-cols-2 gap-2 mt-2">
+              <Recommendations />
+              <Orders />
+            </div>
+            <Predictions />
+          </div>
+          
+          <div>
+            <Problems />
+            <Laboratory />
+            <Reports />
+            <Diagnostics />
+          </div>
+          
         </div>
 
       </main>
