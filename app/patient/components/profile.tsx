@@ -2,6 +2,7 @@
 import { AudioLines, HeartPulse, Thermometer } from "lucide-react";
 import React from "react";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export default function ProfileCard({patient} : any) {
 
   React.useEffect(() => {
