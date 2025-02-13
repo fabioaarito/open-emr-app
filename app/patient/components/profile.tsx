@@ -10,7 +10,7 @@ export default function ProfileCard({patient} : any) {
   }, []);
 
   return (
-    <div className="grid grid-cols-3 gap w-f">
+    <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
         {/* 1st box */}
         <div className="flex-row h-full">
             <div className="flex justify-center h-full">
@@ -50,9 +50,9 @@ export default function ProfileCard({patient} : any) {
         </div>
         
         {/* 2nd box */}
-        <div className="flex-row h-full">
-            <div className="flex items-center justify-center h-full">
-                <div className="flex bg-white rounded-lg shadow-lg p-6 w-80 justify-center items-center flex-row h-full">
+        <div className="flex-row h-full w-full">
+            <div className="flex items-center justify-center h-full w-full">
+                <div className="flex bg-white rounded-lg shadow-lg p-6 w-80 justify-center items-center flex-row h-full w-full">
                     <div className="relative inline-block">
                         <img alt="Silhouette of a human body" className="w-14 mx-auto" height="100" src="https://phire.techascent.com/img/body-light.svg" width="100"/>
                         <div className="absolute top-5 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -96,8 +96,8 @@ export default function ProfileCard({patient} : any) {
 
 
         {/* 3rd box */}
-        <div className="flex-row">
-            <div className="flex items-center justify-center">
+        <div className="flex-row h-full">
+            <div className="flex h-full">
                 <div className="bg-white p-6 rounded-lg shadow-md w-full">
                 <div className="grid grid-cols-2 gap-y-4 text-gray-700">
                     <div className="font-semibold">MRN</div>

@@ -33,28 +33,33 @@ export default function Patient() {
   }, []);
 
   return (
-    <div className="grid sm:p-8 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-2 sm:items-start">
-        <div className="grid grid-cols-3 gap-3">
-          <div className="col-span-2">
-            <ProfileCard patient={patient}/>
-            <div className="grid grid-cols-2 gap-2 mt-2">
-              <Recommendations />
-              <Orders />
-            </div>
-            <Predictions />
-          </div>
-          
-          <div>
-            <Problems />
-            <Laboratory />
-            <Reports />
-            <Diagnostics />
-          </div>
-          
+    <div className="container m-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* <!-- First Column (spans 2 columns) --> */}
+        <ProfileCard patient={patient}/>
+        {/* <!-- Second Column --> */}
+        <div className="">
+          <Problems />
         </div>
-
-      </main>
+        {/* <!-- Third Cell with 2 components inside --> */}
+        <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <Recommendations />
+          <Orders />
+        </div>
+        {/* <!-- Fourth Cell --> */}
+        <div className="">
+          <Laboratory />
+        </div>
+        {/* <!-- Fifth Cell --> */}
+        <div className="md:col-span-2">
+          <Predictions />
+        </div>
+        {/* <!-- Sixth Cell --> */}
+        <div className="">
+          <Diagnostics />
+          <Reports />
+        </div>
+      </div>
     </div>
   );
 }
