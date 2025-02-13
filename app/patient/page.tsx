@@ -33,7 +33,7 @@ export default function Patient() {
   }, []);
 
   return (
-    <div className="container m-2">
+    <div className="container p-2">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* <!-- First Column (spans 2 columns) --> */}
         <ProfileCard patient={patient}/>
