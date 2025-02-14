@@ -5,6 +5,11 @@ export interface Patient {
     name: string;
     photos: PatientPhoto[];
     contact: PatientContact[];
+    healthStatus: number
+    dob: string;
+    allergies?: string;
+    room?: string;
+    points?: number;
 }
 
 export interface PatientContact {

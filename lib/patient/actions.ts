@@ -1,11 +1,17 @@
 import {Patient} from "@/lib/patient/model";
+import {getBearerToken} from "@/lib/auth/actions";
 
-export async function getPatients(bearerToken: string) {
+export async function getPatients(bearerToken?: string) {
+
+    let token = bearerToken;
+    if(!bearerToken) {
+        token = await getBearerToken();
+    }
 
     const response = await fetch(`${process.env.AZURE_RESOURCE}/Patient`, {
         method: 'GET',
         headers: {
-        Authorization: `Bearer ${bearerToken}`,
+        Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json',
         },
     });
@@ -25,6 +31,11 @@ export async function getPatients(bearerToken: string) {
             contact: resource.contact.map((contactEntry: any) => contactEntry.organization),
             active: resource.active,
             id: resource.id,
+            healthStatus: 77,
+            points: 2,
+            dob: "1941-07-25",
+            allergies: "2",
+            room: "4D",
         }
         patients.push(patient);
         return patients;
