@@ -7,7 +7,11 @@ export default function ProfileCard({patient} : any) {
 
   React.useEffect(() => {
 
+    console.log(patient);
+
   }, []);
+
+  const healthStatusColor = `${patient.healthStatus < 50 ? "text-red-500" : "text-green-500"}`
 
   return (
     <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -16,7 +20,7 @@ export default function ProfileCard({patient} : any) {
             <div className="flex justify-center h-full">
                 <div className="bg-white rounded-lg shadow-lg p-6 w-full">
                 <div className="flex items-center mb-4">
-                 <img alt="Portrait of a woman with blonde hair, wearing a white shirt, smiling and standing with arms crossed" className="w-16 h-16 rounded-full mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/MtTX23Fn-oFtpKDJCmllqbUYCRPR4LhWjxglViEo6Cw.jpg" width="100"/>
+                 <img className="w-16 h-16 rounded-full mr-4" height="100" src={`data:image/gif;base64,${patient.photos[0].data}`} width="100"/>
                 <div>
                 <h2 className="text-xl font-bold">
                     {patient.name}
@@ -33,13 +37,13 @@ export default function ProfileCard({patient} : any) {
                                     a 15.9155 15.9155 0 0 1 0 31.831
                                     a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="2.8">
                     </path>
-                    <path className="text-red-500" d="M18 2.0845
+                    <path className={`${healthStatusColor}`} d="M18 2.0845
                                     a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke="currentColor" stroke-dasharray="15, 100" stroke-width="2.8">
                     </path>
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-red-500">
-                    15%
+                    <span className={`text-2xl font-bold ${healthStatusColor}`}>
+                    {patient.healthStatus}%
                     </span>
                 </div>
                 </div>
